@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox TEST</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100px;
+            order: 2;
+            align-self: flex-start;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh; 
+        }
+        .item {
+            background-color: #bb4c4c;
+            border: 1px solid #ec9b9b;
+            padding: 70px;
+            margin: 70px;
+            color: aqua;
+            flex: 1 1 200px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">KIWI</div>
+        <div class="item">APPPLE</div>
+        <div class="item">PINEAPPLE</div>
+        <div class="item">DRAGON</div>
+        <div class="item">Gauva</div>
+    </div>
+</body>
+</html>
