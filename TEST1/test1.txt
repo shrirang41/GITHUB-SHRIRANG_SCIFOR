@@ -1,5 +1,0 @@
-1.WHAT IS HTML?
-ANS:- HTML stands for HYPERTEXT MARKUP LANGUAGE, It is a standard markup language which is used to create a web page. HTML is a combination of hypertext markup language, HYPERTEXT defines links between web page. 
-
-2.WHAT ARE HTML TAGS?
-ANS:- The <html> tag represents the root of an HTML document. tags & attributes to describe the structure of webpage.
