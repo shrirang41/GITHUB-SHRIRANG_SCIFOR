@@ -1,0 +1,64 @@
+1.WHAT IS HTML?
+ANS:- HTML stands for HYPERTEXT MARKUP LANGUAGE, 
+      It is a standard markup language which is used to create a web page. 
+      HTML is a combination of hypertext markup language, HYPERTEXT defines links between web page. 
+
+2.What Are the HTML tags and elements the same thing? 
+ANS:- HTML tags are the specific keywords or symbols that define the structure and content of an HTML document. 
+    They are enclosed in angle brackets, like <p> for paragraphs or <img> for images.
+    HTML elements are the components or building blocks of an HTML document. 
+    They consist of a start tag, content (if any), and an end tag
+    HTML tags are the individual keywords that define elements.
+    HTML elements are the complete structures created by combining tags and content.
+
+3.What are the tags and attributes in HTML? 
+ANS: HTML tags are the keywords that define the structure and content of an HTML document. 
+    They are enclosed in angle brackets, like <p> for paragraphs or <img> for images.
+    HTML attributes are additional properties that can be added to HTML tags to provide more information or modify their behavior. 
+    They are placed within the opening tag, separated by spaces, and consist of a name and a value, separated by an equals sign.
+
+4.What are void elememts in HTML? 
+ANS: Void elements in HTML are elements that do not have any content. 
+    They are self-closing, meaning they do not require an end tag.
+    Example: <img>: Defines an image
+            <br>: Inserts a line break
+            <hr>: Defines a horizontal rule
+            <input>: Defines an input field 
+
+5. What is the features of HTML? 
+ANS: 
+1.Structure and Content: HTML defines the structure and content of a web page using tags and attributes.
+2.Hyperlinks: HTML enables the creation of hyperlinks, 
+              allowing users to navigate between different web pages.
+3.Formatting: HTML provides tags for formatting text, such as bold, italic, headings, and paragraphs.
+4.Multimedia: HTML supports the inclusion of multimedia elements like images, audio, and video.
+5.Forms: HTML allows for the creation of forms to collect user input.
+6.Tables: HTML can be used to create tables for organizing data.
+7.Semantic Markup: HTML5 introduced semantic elements that provide more meaning to the content, 
+                   making it easier for search engines and screen readers to understand.
+8.Accessibility: HTML can be used in conjunction with CSS and JavaScript to create accessible web pages for users with disabilities.
+
+6.Diff between HTML vs XHTML?
+ANS: 
+1. Syntax
+HTML: More lenient with syntax. For example, unclosed tags and case-insensitive tags are allowed (e.g., <BR> and <br> are both valid).
+XHTML: Stricter syntax rules as it follows XML guidelines. Tags must be properly closed, all elements must be lowercase, 
+and attribute values must be enclosed in quotes. For example, <br /> instead of <br>.
+2. Language Basis
+HTML: Based on SGML (Standard Generalized Markup Language), which allows for more flexibility.
+XHTML: Based on XML (Extensible Markup Language), which is stricter and more predictable for machines to parse.
+3. Case Sensitivity
+HTML: Tag names are not case-sensitive, so <BODY> and <body> are treated the same.
+XHTML: All tag and attribute names must be in lowercase.
+4. Closing Tags
+HTML: Some elements (like <img>, <br>, <hr>) don’t require closing tags.
+XHTML: All elements, even empty ones like <img /> or <br />, must have a closing tag.
+5. Error Handling
+HTML: Browsers try to render pages even with syntax errors, often "guessing" what the developer intended.
+XHTML: Browsers are less forgiving. A syntax error can cause the entire page to fail to render.
+6. Compatibility
+HTML: More forgiving, compatible with older browsers.
+XHTML: Stricter, ensuring better interoperability between browsers and other XML-based systems.
+7. MIME Type
+HTML: Typically served as text/html.
+XHTML: Should be served as application/xhtml+xml for true XHTML parsing, although it’s often served as text/html for compatibility with older browsers.
