@@ -1,0 +1,38 @@
+<!--Apply background colors to div element using foundation classes-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation Background Colors Apply</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites/dist/css/foundation.min.css">
+</head>
+
+<body>  
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell small-12 medium-6 large-4">
+        <div class="callout primary">
+          This div has a PRIMARY BACKGROUND COLOR.
+        </div>
+      </div>
+      <div class="cell small-12 medium-6 large-4">
+        <div class="callout secondary">
+          This div has a SECONDARY BACKGROUND COLOR.
+        </div>
+      </div>
+      <div class="cell small-12 medium-6 large-4">
+        <div class="callout success">
+          This div has a SUCCESS BACKGROUND COLOR.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites/dist/js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
