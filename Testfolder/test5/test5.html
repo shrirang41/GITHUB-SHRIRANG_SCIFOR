@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Styling the carousel */
+    .carousel {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+      border-radius: 15px; /* Rounded corners */
+      overflow: hidden; /* Hide overflow to apply rounded corners to images */
+    }
+
+    /* Styling the images inside the carousel */
+    @media (max-width: 768px) {
+     .carousel-item img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media (min-width: 769px) {
+        .carousel-item img {
+        width: 50%;
+        height: auto;
+      }
+
+      /* Adjust the image size for larger screens */
+ 
+       .carousel-item img {
+        width: 750px;
+        height: auto;
+      }
+    }
+    
+    /* Styling the image size for mobile screens */
+    @media (max-width: 576px) {
+     .carousel-item img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    /* Styling the image size for tablet screens */
+    @media (min-width: 577px) and (max-width: 768px) {
+     .carousel-item img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    /* Styling the image size for desktop screens */
+    @media (min-width: 769px) {
+     .carousel-item img {
+        width: 50%;
+        height: auto;
+      }
+    }
+    
+    
+    /* Styling the image size for extra large screens */
+    @media (min-width: 1200px) {
+     .carousel-item img {
+        width: 25%;
+        height: auto;
+      }
+
+      /* Adjust the image size for very large screens */
+
+      .carousel-item img {
+        width: 20%;
+        height: auto;
+      }
+    }
+    
+    .carousel-item img {
+      width: 500px; 
+      height: 500px; 
+      object-fit: cover; 
+      margin: 0 auto; 
+      border-radius: 10px; /* Slight rounding of images for smooth look */
+    }
+
+    /* Custom styles for the captions */
+    .carousel-caption {
+      background: rgba(255, 255, 255, 0.7); /* Light background for better readability */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .carousel-caption h5 {
+      font-size: 1.5rem;
+      color: black; /* Black text color */
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Light shadow effect */
+    }
+
+    .carousel-caption p {
+      font-size: 1rem;
+      color: black; /* Black text color */
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Style the indicators to be more visible */
+    .carousel-indicators button {
+      background-color: black; /* Black indicators */
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Awesome Image Carousel</h1>
+
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+      
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Inner carousel with images and captions -->
+      <div class="carousel-inner">
+      
+        <div class="carousel-item active">
+          <img src="image_1.jpg" class="d-block w-100" alt="Image 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Image 1 Title</h5>
+            <p>Image 1 is stunning.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="image_2.jpg" class="d-block w-100" alt="Image 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Image 2 Title</h5>
+            <p>Image 2 look good.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="image_3.jpg" class="d-block w-100" alt="Image 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Image 3 Title</h5>
+            <p>Image 3 is awesome & looking good.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
