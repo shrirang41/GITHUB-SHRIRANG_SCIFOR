@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Operators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Assignment Operators in JavaScript</h1>
+    <pre id="output"></pre>
+
+    <script>
+        let a = 10;
+        let b = 5;
+
+        let output = `
+        Initial values: a = ${a}, b = ${b}
+        `;
+
+        a += b; // a = a + b
+        output += `\nAfter a += b: a = ${a}`;
+
+        a -= b; // a = a - b
+        output += `\nAfter a -= b: a = ${a}`;
+
+        a *= b; // a = a * b
+        output += `\nAfter a *= b: a = ${a}`;
+
+        a /= b; // a = a / b
+        output += `\nAfter a /= b: a = ${a}`;
+
+        a %= b; // a = a % b
+        output += `\nAfter a %= b: a = ${a}`;
+
+        a **= b; // a = a ** b
+        output += `\nAfter a **= b: a = ${a}`;
+
+        a &= b; // a = a & b
+        output += `\nAfter a &= b: a = ${a}`;
+
+        a |= b; // a = a | b
+        output += `\nAfter a |= b: a = ${a}`;
+
+        a ^= b; // a = a ^ b
+        output += `\nAfter a ^= b: a = ${a}`;
+
+        a <<= b; // a = a << b
+        output += `\nAfter a <<= b: a = ${a}`;
+
+        a >>= b; // a = a >> b
+        output += `\nAfter a >>= b: a = ${a}`;
+
+        a >>>= b; // a = a >>> b
+        output += `\nAfter a >>>= b: a = ${a}`;
+
+        document.getElementById('output').textContent = output;
+    </script>
+</body>
+</html>
