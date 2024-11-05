@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arithmetic Operators</h1>
+    <p id="addition" class="result"></p>
+    <p id="subtraction" class="result"></p>
+    <p id="multiplication" class="result"></p>
+    <p id="division" class="result"></p>
+    <p id="modulus" class="result"></p>
+    <p id="increment" class="result"></p>
+    <p id="decrement" class="result"></p>
+
+    <script>
+        let a = 10;
+        let b = 5;
+
+        let addition = a + b;
+        let subtraction = a - b;
+        let multiplication = a * b;
+        let division = a / b;
+        let modulus = a % b;
+
+        let increment = ++a;
+        let decrement = --b; 
+
+        document.getElementById('addition').textContent = `Addition (a + b): ${addition}`;
+        document.getElementById('subtraction').textContent = `Subtraction (a - b): ${subtraction}`;
+        document.getElementById('multiplication').textContent = `Multiplication (a * b): ${multiplication}`;
+        document.getElementById('division').textContent = `Division (a / b): ${division}`;
+        document.getElementById('modulus').textContent = `Modulus (a % b): ${modulus}`;
+        document.getElementById('increment').textContent = `Increment (++a): ${increment}`;
+        document.getElementById('decrement').textContent = `Decrement (--b): ${decrement}`;
+    </script>
+</body>
+</html>
