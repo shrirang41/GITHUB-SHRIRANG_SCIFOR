@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Operators</title>
+</head>
+<body>
+    <h1>Comparison Operators</h1>
+    <p id="output"></p>
+
+    <script>
+        let a = 30;
+        let b = 50;
+
+        
+        let equal = (a == b); 
+        let strictEqual = (a === b); 
+        let notEqual = (a != b); 
+        let strictNotEqual = (a !== b); 
+        let greaterThan = (a > b); 
+        let lessThan = (a < b); 
+        let greaterThanOrEqual = (a >= b); 
+        let lessThanOrEqual = (a <= b); 
+
+       
+        document.getElementById("output").innerHTML = `
+            a == b: ${equal} <br>
+            a === b: ${strictEqual} <br>
+            a != b: ${notEqual} <br>
+            a !== b: ${strictNotEqual} <br>
+            a > b: ${greaterThan} <br>
+            a < b: ${lessThan} <br>
+            a >= b: ${greaterThanOrEqual} <br>
+            a <= b: ${lessThanOrEqual}
+        `;
+    </script>
+</body>
+</body>
+</html>
