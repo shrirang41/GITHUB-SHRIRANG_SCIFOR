@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenate Strings</title>
+</head>
+<body>
+    <h1>Concatenate Two Strings</h1>
+    <p id="result"></p>
+
+    <script>
+        function concatenateStrings(str1, str2) {
+            return str1 + str2;
+        }
+        const string1 = "New, ";
+        const string2 = "Data!";
+        const result = concatenateStrings(string1, string2);
+
+        document.getElementById("result").innerText = "Concatenated String: " + result;
+    </script>
+</body>
+</html>
