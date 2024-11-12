@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break and Continue</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Break and Continue</h1>
+    <div style="text-align: center;">
+        <button onclick="showBreakExample()">Show Break Example</button>
+        <button onclick="showContinueExample()">Show Continue Example</button>
+    </div>
+    <div class="output" id="output"></div>
+
+    <script>
+        function showBreakExample() {
+            let output = document.getElementById('output');
+            output.innerHTML = '<h2 style="color: #28a745;">Break Example</h2>';
+            for (let i = 0; i < 10; i++) {
+                if (i === 5) {
+                    break; // Exit the loop when i is 5
+                }
+                output.innerHTML += `The number is <strong>${i}</strong><br>`;
+            }
+        }
+
+        function showContinueExample() {
+            let output = document.getElementById('output');
+            output.innerHTML = '<h2 style="color: #dc3545;">Continue Example</h2>';
+            for (let i = 0; i < 10; i++) {
+                if (i === 5) {
+                    continue; // Skip the current iteration when i is 5
+                }
+                output.innerHTML += `The number is <strong>${i}</strong><br>`;
+            }
+        }
+    </script>
+</body>
+</html>
