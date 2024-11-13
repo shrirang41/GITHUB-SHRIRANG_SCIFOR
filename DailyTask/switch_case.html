@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e2e8f0; /* Light gray-blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: translateY(-5px); /* Subtle hover effect */
+        }
+        h1 {
+            font-size: 2rem;
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        input {
+            padding: 12px;
+            margin: 15px 0;
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #007BFF; /* Blue border on focus */
+        }
+        button {
+            padding: 12px 25px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            background-color: #f0f9ff;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .result.invalid {
+            background-color: #fddede; /* Light red background for invalid input */
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+        .result.valid {
+            background-color: #d4edda; /* Light green background for valid input */
+            color: #155724;
+            border: 1px solid #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Day Selector</h1>
+        <input type="number" id="dayInput" placeholder="Enter a number (1-7)">
+        <button onclick="selectDay()">Select Day</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function selectDay() {
+            const dayNumber = parseInt(document.getElementById('dayInput').value);
+            const result = document.getElementById('result');
+            let day;
+
+            switch (dayNumber) {
+                case 1:
+                    day = 'Monday';
+                    break;
+                case 2:
+                    day = 'Tuesday';
+                    break;
+                case 3:
+                    day = 'Wednesday';
+                    break;
+                case 4:
+                    day = 'Thursday';
+                    break;
+                case 5:
+                    day = 'Friday';
+                    break;
+                case 6:
+                    day = 'Saturday';
+                    break;
+                case 7:
+                    day = 'Sunday';
+                    break;
+                default:
+                    day = 'Invalid number! Please enter a number between 1 and 7.';
+                    result.classList.add('invalid');
+                    result.classList.remove('valid');
+                    break;
+            }
+
+            if (dayNumber >= 1 && dayNumber <= 7) {
+                result.classList.remove('invalid');
+                result.classList.add('valid');
+            }
+
+            result.textContent = day;
+        }
+    </script>
+</body>
+</html>
