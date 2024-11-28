@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic About Page</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadAbout = document.getElementById("loadAbout");
+            const content = document.getElementById("content");
+
+            loadAbout.addEventListener("click", (e) => {
+                e.preventDefault();
+                fetch("about.html")
+                    .then(response => {
+                        if (!response.ok) throw new Error("Network response was not ok");
+                        return response.text();
+                    })
+                    .then(data => {
+                        content.innerHTML = data;
+                    })
+                    .catch(error => {
+                        content.innerHTML = `<p style="color: red;">Error loading the About Page: ${error.message}</p>`;
+                    });
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header nav a:hover {
+            background-color: white;
+            color: #4CAF50;
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        main h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" id="loadAbout">About Us</a>
+        </nav>
+    </header>
+    <main>
+        <section id="content">
+            <h1>Welcome to Our Website</h1>
+            <p>Click the link above to learn more about us.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SN Private Limited. All rights reserved.</p>
+    </footer>
+</body>
+</html>
