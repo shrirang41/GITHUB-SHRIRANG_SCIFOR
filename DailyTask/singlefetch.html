@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product {
+            margin: 20px 0;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Product Details</h1>
+<div id="product"></div>
+<div id="error" class="error"></div>
+
+<script>
+    async function fetchProduct(productId) {
+        try {
+            const response = await fetch(`https://dummyjson.com/products/${productId}`); // Use DummyJSON API
+            if (!response.ok) {
+                throw new Error('Unable to fetch product');
+            }
+            const product = await response.json();
+            displayProduct(product);
+        } catch (error) {
+            displayError(`Error: ${error.message}`);
+        }
+    }
+
+    function displayProduct(product) {
+        const productDiv = document.getElementById('product');
+        productDiv.innerHTML = `
+            <div class="product">
+                <h2>${product.title}</h2>
+                <p>Price: $${product.price}</p>
+                <p>Description: ${product.description}</p>
+            </div>
+        `;
+    }
+
+    function displayError(message) {
+        const errorDiv = document.getElementById('error');
+        errorDiv.textContent = message;
+    }
+
+    // Fetch product with ID '1' on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchProduct(1); // Replace '1' with the actual product ID
+    });
+</script>
+
+</body>
+</html>
