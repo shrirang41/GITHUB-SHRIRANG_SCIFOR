@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial Finder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Factorial Finder</h1>
+    <p>Enter a number to find its factorial:</p>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="findFactorial()">Find Factorial</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    function findFactorial() {
+      const number = parseInt(document.getElementById('numberInput').value);
+
+      // Validate input
+      if (isNaN(number) || number < 0) {
+        document.getElementById('result').textContent = 'Please enter a non-negative integer.';
+        return;
+      }
+
+      // Calculate factorial
+      let factorial = 1;
+      for (let i = 1; i <= number; i++) {
+        factorial *= i;
+      }
+
+      document.getElementById('result').textContent = `The factorial of ${number} is ${factorial}.`;
+    }
+  </script>
+</body>
+</html>
