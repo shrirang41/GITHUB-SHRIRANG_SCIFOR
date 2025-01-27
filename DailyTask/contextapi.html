@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context API Example</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    // Create a context for Counter
+    const CounterContext = React.createContext();
+
+    // Context provider component
+    function CounterProvider({ children }) {
+      const [count, setCount] = React.useState(0);
+
+      const increment = () => setCount(count + 1);
+      const decrement = () => setCount(count - 1);
+
+      return (
+        <CounterContext.Provider value={{ count, increment, decrement }}>
+          {children}
+        </CounterContext.Provider>
+      );
+    }
+
+    // Display component to show the current count
+    function CounterDisplay() {
+      const { count } = React.useContext(CounterContext);
+
+      return <h1>Our Count: {count}</h1>;
+    }
+
+    // Control component to increment and decrement count
+    function CounterControls() {
+      const { increment, decrement } = React.useContext(CounterContext);
+
+      return (
+        <div>
+          <button onClick={increment}>Increment</button>
+          <button onClick={decrement}>Decrement</button>
+        </div>
+      );
+    }
+
+    // Main App component
+    function App() {
+      return (
+        <CounterProvider>
+          <div>
+            <h1>Counter App</h1>
+            <CounterDisplay />
+            <CounterControls />
+          </div>
+        </CounterProvider>
+      );
+    }
+
+    // Render the App component into the root div
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+
+</body>
+</html>
