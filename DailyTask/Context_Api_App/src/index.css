@@ -1,0 +1,42 @@
+.light-mode {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  padding: 20px; /* Add some padding */
+  font-family: sans-serif; /* Set a default font */
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #eee;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  padding: 20px; /* Add some padding */
+  font-family: sans-serif; /* Set a default font */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
