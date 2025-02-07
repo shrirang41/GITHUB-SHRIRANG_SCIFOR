@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redux Login System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.2/redux.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #app { max-width: 300px; margin: auto; }
+        input { display: block; width: 100%; margin: 10px 0; padding: 8px; }
+        button { width: 100%; padding: 10px; background: #007BFF; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>Login System</h2>
+        <div id="login-form">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+        <div id="logout-section" style="display: none;">
+            <p>Welcome, <span id="user"></span>!</p>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+    
+    <script>
+        // Redux - Initial State
+        const initialState = { isAuthenticated: false, user: "" };
+
+        // Redux - Action Types
+        const LOGIN = "LOGIN";
+        const LOGOUT = "LOGOUT";
+
+        // Redux - Reducer
+        function authReducer(state = initialState, action) {
+            switch (action.type) {
+                case LOGIN:
+                    return { ...state, isAuthenticated: true, user: action.payload };
+                case LOGOUT:
+                    return { ...state, isAuthenticated: false, user: "" };
+                default:
+                    return state;
+            }
+        }
+
+        // Create Redux Store
+        const store = Redux.createStore(authReducer);
+
+        // Subscribe to store changes
+        store.subscribe(updateUI);
+
+        // Login function
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            if (username && password) {
+                store.dispatch({ type: LOGIN, payload: username });
+            }
+        }
+
+        // Logout function
+        function logout() {
+            store.dispatch({ type: LOGOUT });
+        }
+
+        // Update UI function
+        function updateUI() {
+            const state = store.getState();
+            if (state.isAuthenticated) {
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("logout-section").style.display = "block";
+                document.getElementById("user").textContent = state.user;
+            } else {
+                document.getElementById("login-form").style.display = "block";
+                document.getElementById("logout-section").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
